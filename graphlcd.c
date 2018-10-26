@@ -48,7 +48,7 @@
 #include <glcdskin/parser.h>
 #include <glcdskin/skin.h>
 #include <glcdskin/config.h>
-#include <glcdskin/string.h>
+#include <glcdskin/string_lcd.h>
 
 // Hardcoded path to the global configuration file. This should be delivered
 // by graphlcd-base.

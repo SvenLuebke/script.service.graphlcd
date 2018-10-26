@@ -6,7 +6,7 @@ PRGNAME = resources/lib/graphlcd.so
 
 PYTHONVERSION=2
 OBJS = graphlcd.o
-INCLUDES = $(shell pkg-config --cflags python$(PYTHONVERSION))
+INCLUDES = $(shell pkg-config --cflags python$(PYTHONVERSION)) $(shell pkg-config --cflags libglcddrivers)
 LIBS = -lglcdgraphics -lglcddrivers -lglcdskin -lstdc++
 CXXFLAGS ?= -Wall
 ADDONDIR = /usr/share/kodi/addons/script.service.graphlcd
