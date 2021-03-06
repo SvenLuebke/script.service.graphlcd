@@ -1,5 +1,5 @@
 #  Graphlcd Addon for Kodi
-#  Copyright (C) 2016 Manuel Reimer <manuel.reimer@gmx.de>
+#  Copyright (C) 2021 Manuel Reimer <manuel.reimer@gmx.de>
 #
 #  This program is free software: you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -58,6 +58,14 @@ class WINDOW_IDS:
 # Returns "cleaned up" volume value as plain integer from 0 (min) to 60 (max)
 def GetPlayerVolume():
   return 60 + int(float(xbmc.getInfoLabel('Player.Volume').replace(',', '.').replace(' dB', '')))
+
+# Returns "cleaned up" time values (integer only, in seconds)
+def GetTime(aVariable):
+  timestr = xbmc.getInfoLabel(aVariable + '(hh:mm:ss)')
+  parts = timestr.split(':')
+  if len(parts) != 3:
+    return ""
+  return int(parts[0]) * 60 * 60 + int(parts[1]) * 60 + int(parts[2])
 
 
 # Returns the name of the screen which should appear on the LCD in Kodi's
@@ -132,11 +140,9 @@ def GetTokenValue(aVariableName, aAttrib, aIndex, aMaxItems):
 
   # Playback times
   elif aVariableName == 'PlayerDuration':
-    try: return int(xbmc.Player().getTotalTime())
-    except: return ''
+    return GetTime('Player.Duration') or GetTime('PVR.EpgEventDuration')
   elif aVariableName == 'PlayerTime':
-    try: return int(xbmc.Player().getTime())
-    except: return ''
+    return GetTime('Player.Time')
 
   # Scroll settings
   elif aVariableName == 'ScrollMode' or \

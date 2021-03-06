@@ -1,32 +1,32 @@
 <?xml version="1.0"?>
 <skin version="1.2" name="default">
 
-  <font id="FontInfo"          url="ft2:VeraBd.ttf:9"               condition="le({ScreenHeight},65)"/>
-  <font id="FontChannel"       url="ft2:VeraBd.ttf:12"              condition="le({ScreenHeight},65)"/>
-  <font id="FontMenuTitle"     url="ft2:Vera.ttf:8"                 condition="le({ScreenHeight},65)"/>
+  <font id="FontInfo"          url="ft2:DejaVuSans-Bold.ttf:9"      condition="le({ScreenHeight},65)"/>
+  <font id="FontChannel"       url="ft2:DejaVuSans-Bold.ttf:12"     condition="le({ScreenHeight},65)"/>
+  <font id="FontMenuTitle"     url="ft2:DejaVuSans.ttf:8"           condition="le({ScreenHeight},65)"/>
   <font id="FontMenuItem"      url="ft2:DejaVuSansCondensed.ttf:8"  condition="le({ScreenHeight},65)"/>
   <font id="FontMenuButton"    url="ft2:DejaVuSansCondensed.ttf:8"  condition="le({ScreenHeight},65)"/>
-  <font id="FontTitle"         url="ft2:VeraBd.ttf:9"               condition="le({ScreenHeight},65)"/>
-  <font id="FontTitleSmall"    url="ft2:VeraBd.ttf:8"               condition="le({ScreenHeight},65)"/>
-  <font id="FontInfoSmall"     url="ft2:Vera.ttf:8"                 condition="le({ScreenHeight},65)"/>
-  <font id="FontInfoSmall2"    url="ft2:Vera.ttf:7"                 condition="le({ScreenHeight},65)"/>
+  <font id="FontTitle"         url="ft2:DejaVuSans-Bold.ttf:9"      condition="le({ScreenHeight},65)"/>
+  <font id="FontTitleSmall"    url="ft2:DejaVuSans-Bold.ttf:8"      condition="le({ScreenHeight},65)"/>
+  <font id="FontInfoSmall"     url="ft2:DejaVuSans.ttf:8"           condition="le({ScreenHeight},65)"/>
+  <font id="FontInfoSmall2"    url="ft2:DejaVuSans.ttf:7"           condition="le({ScreenHeight},65)"/>
   <font id="FontTimes"         url="fnt:f8n.fnt"                    condition="le({ScreenHeight},65)"/>
 
-  <font id="FontTitle"         url="ft2:VeraBd.ttf:24"              condition="gt({ScreenHeight},128)"/>
-  <font id="FontTitleSmall"    url="ft2:Vera.ttf:20"                condition="gt({ScreenHeight},128)"/>
-  <font id="FontInfoSmall"     url="ft2:VeraBd.ttf:16"              condition="gt({ScreenHeight},128)"/>
-  <font id="FontInfoSmall2"    url="ft2:Vera.ttf:14"                condition="gt({ScreenHeight},128)"/>
+  <font id="FontTitle"         url="ft2:DejaVuSans-Bold.ttf:24"     condition="gt({ScreenHeight},128)"/>
+  <font id="FontTitleSmall"    url="ft2:DejaVuSans.ttf:20"          condition="gt({ScreenHeight},128)"/>
+  <font id="FontInfoSmall"     url="ft2:DejaVuSans-Bold.ttf:16"     condition="gt({ScreenHeight},128)"/>
+  <font id="FontInfoSmall2"    url="ft2:DejaVuSans.ttf:14"          condition="gt({ScreenHeight},128)"/>
 
-  <font id="FontInfo"          url="ft2:Vera.ttf:18"/>
-  <font id="FontChannel"       url="ft2:VeraBd.ttf:22"/>
-  <font id="FontMenuTitle"     url="ft2:Vera.ttf:15"/>
-  <font id="FontMenuItem"      url="ft2:Vera.ttf:12"/>
-  <font id="FontMenuButton"    url="ft2:VeraBd.ttf:9"/>
-  <font id="FontTitle"         url="ft2:VeraBd.ttf:20" />
-  <font id="FontTitleSmall"    url="ft2:Vera.ttf:14" />
-  <font id="FontInfoSmall"     url="ft2:VeraBd.ttf:10"/>
-  <font id="FontInfoSmall2"    url="ft2:Vera.ttf:10"/>
-  <font id="FontTimes"         url="ft2:Vera.ttf:14"/>
+  <font id="FontInfo"          url="ft2:DejaVuSans.ttf:18"/>
+  <font id="FontChannel"       url="ft2:DejaVuSans-Bold.ttf:22"/>
+  <font id="FontMenuTitle"     url="ft2:DejaVuSans.ttf:15"/>
+  <font id="FontMenuItem"      url="ft2:DejaVuSans.ttf:12"/>
+  <font id="FontMenuButton"    url="ft2:DejaVuSans-Bold.ttf:9"/>
+  <font id="FontTitle"         url="ft2:DejaVuSans-Bold.ttf:20" />
+  <font id="FontTitleSmall"    url="ft2:DejaVuSans.ttf:14" />
+  <font id="FontInfoSmall"     url="ft2:DejaVuSans-Bold.ttf:10"/>
+  <font id="FontInfoSmall2"    url="ft2:DejaVuSans.ttf:10"/>
+  <font id="FontTimes"         url="ft2:DejaVuSans.ttf:14"/>
 
   <variable id="LineThickness" value="1" condition="le({ScreenHeight},65)" default="2" />
   <variable id="PaddingW"       value="0" condition="le({ScreenHeight},65)" />
@@ -203,7 +203,7 @@
     </block>
     <block condition="{Info.VideoPlayer.NextTitle}">
       <text x1="0" x2="-1" y1="#TimeBarY" y2="-1" color="#ColPresProgrText" align="left" font="FontTimes">
-        {Info.Player.StartTime} - {Info.VideoPlayer.NextStartTime}
+        {Info.VideoPlayer.StartTime} - {Info.VideoPlayer.NextStartTime}
       </text>
       <rectangle x="#PaddingW" width="#TimeBarW" y="add(#TimeBarY,#PaddingH,FontLineHeight('FontTimes'))" height="6" color="#ColPresProgrBarBrd"/>
       <progress x="add(#PaddingW,2)" width="sub(#TimeBarW,4)" y1="add(#TimeBarY,#PaddingH,FontLineHeight('FontTimes'),2)" height="2" color="#ColPresProgrBar" direction="0" current="{PlayerTime}" total="{PlayerDuration}"/>
@@ -312,8 +312,13 @@
     <variable id="ReplayProgressGap" value="1"/>
     <variable id="ReplayTimeY" value="mul(FontLineHeight('FontInfo'),-1)"/>
     <variable id="ReplayProgressY" value="sub(#ReplayTimeY,#ReplayProgressH,#ReplayProgressGap)"/>
+
+    <variable id="ReplayLogoName" value="'twitch'" condition="eq({Info.Player.Folderpath},'plugin://plugin.video.twitch/')"/>
+    <variable id="ReplayLogoName" value="'youtube'" condition="eq({Info.Player.Folderpath},'plugin://plugin.video.youtube/play/')"/>
+    <variable id="ReplayLogoName" value="'primevideo'" condition="eq({Info.Player.Folderpath},'plugin://plugin.video.amazon-test/')"/>
     <variable id="ReplayLogoName" value="'replay-file'" default="'replay-music'" condition="{Bool.Player.HasVideo}"/>
-    <variable id="ReplayLogoSuffix" value="'_m.glcd'" default="'_l.glcd'" condition="le({ScreenHeight},64)"/>
+
+    <variable id="ReplayLogoSuffix" value="'_m.pbm'" default="'_l.pbm'" condition="le({ScreenHeight},64)"/>
     <variable id="ReplayLogo" value="'{ResourcePath}/logos/replay/#ReplayLogoName#ReplayLogoSuffix'"/>
     <variable id="ReplayLogoW" value="ImageWidth(#ReplayLogo)" />
     <variable id="ReplayLogoH" value="ImageHeight(#ReplayLogo)" />

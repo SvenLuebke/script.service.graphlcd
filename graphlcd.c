@@ -1,6 +1,6 @@
 /*
   Graphlcd Addon for Kodi
-  Copyright (C) 2016 Manuel Reimer <manuel.reimer@gmx.de>
+  Copyright (C) 2021 Manuel Reimer <manuel.reimer@gmx.de>
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -48,7 +48,7 @@
 #include <glcdskin/parser.h>
 #include <glcdskin/skin.h>
 #include <glcdskin/config.h>
-#include <glcdskin/string_lcd.h>
+#include <glcdskin/string.h>
 
 // Hardcoded path to the global configuration file. This should be delivered
 // by graphlcd-base.
