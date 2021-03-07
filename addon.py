@@ -14,14 +14,20 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+import os
+import sys
 import xbmc
+import xbmcvfs
 import xbmcaddon
 import xbmcgui
 
 addon         = xbmcaddon.Addon()
-resourcespath = xbmc.translatePath(addon.getAddonInfo('path')) + '/resources'
+resourcespath = xbmc.translatePath(addon.getAddonInfo('path')) + 'resources'
 
 sys.path.insert(0, resourcespath + '/lib')
+xbmc.log(' . GraphLCD: ' + os.environ['LD_LIBRARY_PATH'], xbmc.LOGINFO)
+#xbmc.log(' . Graphlcd: '.join(sys.path), xbmc.LOGINFO)
+
 import graphlcd
 import channelsalias
 import menucache
